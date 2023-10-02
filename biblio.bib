@@ -38,6 +38,24 @@ abstract="Swarm behaviour engineering is an area of research that seeks to inves
 isbn="978-3-031-35361-1"
 }
 
+
+@inproceedings{DBLP:conf/icdcs/AguzziCV22,
+  author       = {Gianluca Aguzzi and
+                  Roberto Casadei and
+                  Mirko Viroli},
+  title        = {Machine Learning for Aggregate Computing: a Research Roadmap},
+  booktitle    = {42nd {IEEE} International Conference on Distributed Computing Systems,
+                  {ICDCS} Workshops, Bologna, Italy, July 10, 2022},
+  pages        = {119--124},
+  publisher    = {{IEEE}},
+  year         = {2022},
+  url          = {https://doi.org/10.1109/ICDCSW56584.2022.00032},
+  doi          = {10.1109/ICDCSW56584.2022.00032},
+  timestamp    = {Wed, 07 Dec 2022 23:06:24 +0100},
+  biburl       = {https://dblp.org/rec/conf/icdcs/AguzziCV22.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
+}
+
 @ARTICLE{iee-floodwatch,
   author={Aguzzi, Gianluca and Casadei, Roberto and Pianini, Danilo and Viroli, Mirko},
   journal={IEEE Internet Computing}, 
@@ -130,6 +148,29 @@ keywords = {collective intelligence, macro programming, system-level programming
   bibsource    = {dblp computer science bibliography, https://dblp.org}
 }
 
+@inproceedings{DBLP:conf/coordination/AguzziCV22,
+  author       = {Gianluca Aguzzi and
+                  Roberto Casadei and
+                  Mirko Viroli},
+  editor       = {Maurice H. ter Beek and
+                  Marjan Sirjani},
+  title        = {Towards Reinforcement Learning-based Aggregate Computing},
+  booktitle    = {Coordination Models and Languages - 24th {IFIP} {WG} 6.1 International
+                  Conference, {COORDINATION} 2022, Held as Part of the 17th International
+                  Federated Conference on Distributed Computing Techniques, DisCoTec
+                  2022, Lucca, Italy, June 13-17, 2022, Proceedings},
+  series       = {Lecture Notes in Computer Science},
+  volume       = {13271},
+  pages        = {72--91},
+  publisher    = {Springer},
+  year         = {2022},
+  url          = {https://doi.org/10.1007/978-3-031-08143-9\_5},
+  doi          = {10.1007/978-3-031-08143-9\_5},
+  timestamp    = {Thu, 23 Jun 2022 19:55:38 +0200},
+  biburl       = {https://dblp.org/rec/conf/coordination/AguzziCV22.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
+}
+
 @article{DBLP:journals/lmcs/AudritoCDV23,
   author       = {Giorgio Audrito and
                   Roberto Casadei and
@@ -146,4 +187,68 @@ keywords = {collective intelligence, macro programming, system-level programming
   timestamp    = {Tue, 24 Jan 2023 10:48:24 +0100},
   biburl       = {https://dblp.org/rec/journals/lmcs/AudritoCDV23.bib},
   bibsource    = {dblp computer science bibliography, https://dblp.org}
+}
+
+@inproceedings{DBLP:conf/acsos/AguzziCV22,
+  author       = {Gianluca Aguzzi and
+                  Roberto Casadei and
+                  Mirko Viroli},
+  editor       = {Roberto Casadei and
+                  Elisabetta Di Nitto and
+                  Ilias Gerostathopoulos and
+                  Danilo Pianini and
+                  Ivana Dusparic and
+                  Timothy Wood and
+                  Phyllis R. Nelson and
+                  Evangelos Pournaras and
+                  Nelly Bencomo and
+                  Sebastian G{\"{o}}tz and
+                  Christian Krupitzer and
+                  Claudia Raibulet},
+  title        = {Addressing Collective Computations Efficiency: Towards a Platform-level
+                  Reinforcement Learning Approach},
+  booktitle    = {{IEEE} International Conference on Autonomic Computing and Self-Organizing
+                  Systems, {ACSOS} 2022, Virtual, CA, USA, September 19-23, 2022},
+  pages        = {11--20},
+  publisher    = {{IEEE}},
+  year         = {2022},
+  url          = {https://doi.org/10.1109/ACSOS55765.2022.00019},
+  doi          = {10.1109/ACSOS55765.2022.00019},
+  timestamp    = {Wed, 16 Nov 2022 11:08:36 +0100},
+  biburl       = {https://dblp.org/rec/conf/acsos/AguzziCV22.bib},
+  bibsource    = {dblp computer science bibliography, https://dblp.org}
+}
+
+@inproceedings{acgnn,
+  author          = {Gianluca Aguzzi and Mirko Viroli and Lukas Esterle},
+  booktitle       = {4th IEEE International Conference on Autonomic Computing and Self-Organizing Systems - ACSOS 2023, Toronto},
+  abstract        = {Coordinating a multi-agent system of intelligent
+situated agents is a traditional research problem, impacted by the
+challenges posed by the very notion of distributed intelligence.
+These problems arise from agents acquiring information locally,
+sharing their knowledge, and acting accordingly in their environment in order to achieve a common, global goal. Individual
+agents need to control how they share their knowledge in order
+to not overburden the network or other agents with unnecessary
+information. These problems are even more evident in large-scale
+collective adaptive systems, where agent interactions are necessarily proximity-based, thus making the emergence of controlled
+global collective behaviour harder.
+In this context, two main approaches have been proposed
+for creating distributed controllers out of macro-level task/goal
+descriptions: manual design, in which programmers build the
+controllers directly, and automatic design, which involves synthesizing programs using machine learning methods. In this
+paper, we consider a new hybrid approach called Field-Informed
+reinforcement learning (FIRL). We utilise manually designed
+computational fields (globally distributed data structures) to
+manage global agent coordination. Then, using Deep Q-learning
+in combination with Graph Neural Networks we enable the agents
+to learn the necessary local behaviour automatically to solve
+collective tasks, relying on those fields through local perception.
+This allows us to create distributed controllers informed by a
+collective knowledge that has been distilled during learning, but
+that uses only local information at runtime. We demonstrate the
+effectiveness of this new approach in simulated use cases where
+tracking and covering tasks for swarm robotics are successfully
+solved.},
+  title           = {Field-informed Reinforcement Learning of Collective Tasks with Graph Neural Networks},
+  year            = {2023}
 }
