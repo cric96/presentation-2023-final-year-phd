@@ -1,0 +1,231 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% AMS Beamer series / Bologna FC / Template
+% Andrea Omicini
+% Alma Mater Studiorum - Università di Bologna
+% mailto:andrea.omicini@unibo.it
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\documentclass[handout]{beamer}\mode<handout>{\usetheme{default}}
+%
+\documentclass[presentation, 9pt, aspectratio=169]{beamer}\mode<presentation>{\usetheme{AMSBolognaFC}}
+%\documentclass[handout]{beamer}\mode<handout>{\usetheme{AMSBolognaFC}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[T1]{fontenc}
+\usepackage{wasysym}
+\usepackage{amsmath,blkarray}
+\usepackage{soul}
+\usepackage[minted,most]{tcolorbox}
+\usepackage{centernot}
+\usepackage{fontawesome}
+\usepackage{fancyvrb}
+\usepackage{minted}
+\usepackage{hyperref}
+\usepackage{multicol}
+\setminted[scala]{fontsize=\small,frame=lines,baselinestretch=1,obeytabs=true, tabsize=2}
+\setminted[yaml]{fontsize=\large,frame=lines,linenos,baselinestretch=1,obeytabs=true, tabsize=2}
+\usepackage[ddmmyyyy]{datetime}
+\setminted{fontsize=\footnotesize}
+\renewcommand{\dateseparator}{}
+%\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\newcommand{\version}{1}
+
+\usepackage[
+	%backend=biber,
+	backend=bibtex,
+%	citestyle=authoryear-icomp,
+%	maxcitenames=1,
+	bibstyle=numeric,
+	style=ieee]{biblatex}
+
+	\makeatletter
+
+%\addbibresource{biblio.bib}
+
+\bibliography{biblio}
+
+
+\newcommand\extrafootertext[1]{%
+    \bgroup
+    \renewcommand\thefootnote{\fnsymbol{footnote}}%
+    \renewcommand\thempfootnote{\fnsymbol{mpfootnote}}%
+    \footnotetext[0]{#1}%
+    \egroup
+}
+
+\newcommand{\citeinslide}[1]{\cite{#1}\extrafootertext{\scriptsize\cite{#1} \fullcite{#1}}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title[Soft-Eng Approach for CPSWs!]
+{A Language-based Software Engineering Approach for Cyber-Physical Swarms}
+%
+%
+\author[\sspeaker{G.Aguzzi}]
+{\speaker{Gianluca Aguzzi} \href{mailto:gianluca.aguzzi@unibo.it}{gianluca.aguzzi@unibo.it} \\
+\textbf{Supervisor:} \speaker{Mirko Viroli} \href{mailto:mirko.viroli@unibo.it}{mirko.viroli@unibo.it}}
+%
+\institute[DISI, Univ.\ Bologna]
+{%Dipartimento di Informatica -- Scienza e Ingegneria (DISI)\\
+\textsc{Alma Mater Studiorum} -- Universit{\`a} di Bologna \\[0.1cm]
+\textbf{Final Year PhD Report}\\[0.15cm]
+}
+%
+\renewcommand{\dateseparator}{/}
+\date[\today]{\today}
+%
+\AtBeginSubsection[]
+{
+  \begin{frame}
+  \frametitle{Contents}
+  \tableofcontents[currentsubsection, 
+	sectionstyle=show/shaded, 
+	subsectionstyle=show/shaded]
+  \end{frame}
+}
+\AtBeginSection[]
+{
+  \begin{frame}
+  \frametitle{Contents}
+  \tableofcontents[currentsubsection, 
+	sectionstyle=show/shaded, 
+	subsectionstyle=show/shaded]
+  \end{frame}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\lstdefinelanguage{scala}{
+  keywords={abstract,case,catch,class,def,%
+    do,else,extends,false,final,finally,%
+    for,if,implicit,import,match,mixin,%
+    new,null,object,override,package,%
+    private,protected,requires,return,sealed,%
+    super,this,throw,trait,true,try,lazy,%
+    type,val,var,while,with,yield,forSome},
+  otherkeywords={=>,<-,<\%,<:,>:,\#},
+  sensitive=true,
+  morecomment=[l]{//},
+  morecomment=[n]{/*}{*/},
+  morestring=[b]",
+  morestring=[b]',
+  morestring=[b]""",
+  basicstyle=\lst@ifdisplaystyle\footnotesize\fi\ttfamily,
+  emphstyle=\bfseries
+}
+\definecolor{ddarkgreen}{rgb}{0,0.5,0}
+\lstdefinelanguage{scafi}{frame=single,basewidth=0.5em,language={scala},
+keywordstyle=\color{blue}\textbf, commentstyle=\color{ddarkgreen},
+keywordstyle=[2]\color{red}\textbf, keywords=[2]{rep,nbr,foldhood,foldhoodPlus,aggregate,branch,spawn},
+keywordstyle=[3]\color{gray}, keywords=[3]{Me,AroundMe,Everywhere,Forever}, %,@@,@@@
+keywordstyle=[4]\color{red}\textbf, keywords=[4]{in,out,rd},
+keywordstyle=[5]\color{violet}, keywords=[5]{evolve,when,andNext,workflow,C,gossip},
+keywordstyle=[6]\color{orange}, keywords=[6]{Available,Serving,Done,Waiting,Removing}}
+
+\newcommand{\hsplit}[2]{
+\begin{minipage}{0.48\textwidth}
+#1
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+#2
+\end{minipage}
+}
+\newcommand{\hsplits}[4]{
+\begin{minipage}{#1\textwidth}
+#3
+\end{minipage}
+\hfill
+\begin{minipage}{#2\textwidth}
+#4
+\end{minipage}
+}
+
+\newcommand{\lbl}[1]{\textbf{\textcolor{gray!90!white}{#1}}}
+\newcommand{\enf}[1]{{\textcolor{red}{#1}}}
+\newcommand{\bo}[1]{\textbf{#1}}
+
+\newcommand{\imgh}[2]{
+\begin{figure}
+\centering
+\includegraphics[width=#1\textwidth]{img/#2}
+\end{figure}
+}
+\newcommand{\imgv}[2]{
+\begin{figure}
+\centering
+\includegraphics[height=#1\textheight]{img/#2}
+\end{figure}
+}
+
+\newtcblisting{mycode}[3]{%
+  boxsep=0pt,
+  boxrule=0pt,
+  arc=1mm, 
+  left=1mm,
+  %auto outer arc,
+  size=fbox,%tight,
+  %colframe=blue!40!black, colframe=black!30!white,
+  %colbacktitle=blue!80!white,
+  colback=blue!5,
+  %toprule=0.1mm, bottomrule=0.1mm, rightrule=0.1mm, leftrule=1mm, 
+  listing only,
+  listing options={language=scafi, alsoletter={-},
+    backgroundcolor={},
+  	columns=fullflexible,
+  	lineskip={-1.5pt},
+  	xleftmargin=0px,
+  	belowskip={0px},
+  	aboveskip={0px},
+  	frame=none,
+  	#2
+  },
+  title={#3},#1
+}
+\lstdefinestyle{s}{basicstyle=\ttfamily\footnotesize}
+\lstdefinestyle{ss}{basicstyle=\ttfamily\scriptsize}
+\lstdefinestyle{sss}{basicstyle=\ttfamily\tiny}
+\lstdefinestyle{conf}{language={},morecomment=[l][\color{darkgreen}]{\#},
+basicstyle=\ttfamily\scriptsize}
+
+\newcommand{\question}[1]{\textcolor{darkgray}{\emph{\bo{#1}}}}
+\newcommand{\refslide}[1]{Slide~\ref{#1}}
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%/////////
+\frame{\titlepage}
+%/////////
+
+%===============================================================================
+\section*{\refname}
+%===============================================================================
+
+%%%%
+\setbeamertemplate{page number in head/foot}{}
+%/////////
+\begin{frame}[c, plain]
+\centering
+\bold{\Huge{Cyber-Physical Swarms (CPSW)}}
+\begin{multicols}{3}
+	\begin{figure}
+		\large{Many \textbf{networked} agents}
+		\includegraphics[width=0.3\textwidth]{example-image-a}
+	\end{figure}
+	\begin{figure}
+		\large{Cyber-physical systems}
+		\includegraphics[width=0.3\textwidth]{example-image-b}
+	\end{figure}
+	\begin{figure}
+		\large{Collective intellingece}
+		\includegraphics[width=0.3\textwidth]{example-image-c}
+	\end{figure}
+\end{multicols}
+
+\end{frame}
+\begin{frame}[allowframebreaks]{References}
+\def\bibfont{\footnotesize}
+\printbibliography
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
