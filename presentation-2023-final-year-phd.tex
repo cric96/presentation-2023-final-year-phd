@@ -405,7 +405,7 @@ and means:
 \vspace{-0.5cm}
 \begin{columns}[t]
 \begin{column}{0.31\textwidth}
-\begin{exampleblock}{FRASP}
+\begin{exampleblock}{FRASP~\cite{frasp}}
 \footnotesize{
   Functional reactive approach to \emph{\underline{self-organisation}} programming
 }
@@ -413,11 +413,11 @@ and means:
   \item Inspired by \emph{\underline{functional reactive programming}}, but \emph{\underline{distributed}}
   \item Implementation in a Scala DSL
 \end{itemize}
-\includegraphics[width=\textwidth]{example-image-a}
+\includegraphics[width=\textwidth]{img/interactions.pdf}
 \end{exampleblock}
 \end{column}
 \begin{column}{0.31\textwidth}
-\begin{exampleblock}{MacroSwarm}
+\begin{exampleblock}{MacroSwarm~\cite{macroswarm}}
 \footnotesize{
   \begin{itemize}
   \item An API for expressing \underline{\emph{swarm}} behaviours
@@ -425,34 +425,55 @@ and means:
   \item \emph{\underline{Extensive}}: cover a wide range of swarm behaviours (e.g., aggregation, flocking, ...)
 \end{itemize}
 }
-\includegraphics[width=\textwidth]{example-image-b}
+\includegraphics[width=\textwidth]{img/architecture-macro.drawio.pdf}
 \end{exampleblock}
 \end{column}
 \begin{column}{0.31\textwidth}
 \footnotesize{
-\begin{exampleblock}{Swarm-Sensing API}
+\begin{exampleblock}{Swarm-Sensing API~\cite{swarm-clustering}}
   \begin{itemize}
     \item distributed \& fault-tollerent sensing based clustering
     \item Useful pattern collective pattern for detecting \emph{\underline{hot-spots}} in the environment
   \end{itemize}
-  \includegraphics[width=\textwidth]{example-image-c}
+  \centering
+  \includegraphics[width=0.7\textwidth]{img/after-merge.png}
 \end{exampleblock}
-
 }  
 \end{column}
 \end{columns}
-
+\end{frame}
+\begin{frame}{Engineering Methodologies -- Cont.}
+  \begin{itemize}
+    \item \emph{\underline{Dev Ops for CPSW}}~\cite{casadei2022towards}: \emph{\underline{continuous integration}} of the \emph{\underline{software}} and the \emph{\underline{physical}} parts of the system
+    \item \emph{\underline{High-level abstractions for Distributed sensing}}~\cite{aguzzi2022dynamic}: \emph{\underline{distributed}} and \emph{\underline{fault-tollerent}} sensing
+    \item \emph{\underline{Pulverisation architecture}}~\cite{aguzzi2021towards}: A \emph{\underline{opportunistic}} model to \emph{\underline{deploy}} aggregate programs
+  \end{itemize}
+  \vspace{0.5cm}
+  \includegraphics[width=0.45\textwidth]{img/action-with-multilayer.pdf}
+  \includegraphics[width=0.53\textwidth]{img/screenshot.png}
+  
 \end{frame}
 \begin{frame}{Tools}
   \vspace{-0.5cm}
   \begin{columns}[t]
     \begin{column}{0.48\textwidth}
-      \begin{exampleblock}{ScaRLib}
+      \begin{exampleblock}{ScaRLib~\cite{domini2023scarlib}}
+        \footnotesize{
+        \begin{itemize}
+          \item A tool for cooperative many agent reinforcement learning
+          \item Support different learning scheme (centralised, decentralised, mixed)
+          \item Binding with state-of-the-art reinforcement learning libraries (e.g., \emph{\underline{PyTorch}})
+        \end{itemize}}
+        \includegraphics[width=\textwidth]{img/flock.png}
       \end{exampleblock}
     \end{column}
-
     \begin{column}{0.48\textwidth}
-      \begin{exampleblock}{ScaFi-Web}
+      \begin{exampleblock}{ScaFi-Web~\cite{aguzzi2021scafi}}
+        \footnotesize{
+        \begin{itemize}
+          \item A \emph{\underline{web-based}} simulator for aggregate computing
+          \item Useful for \emph{\underline{teaching}} and \emph{\underline{prototyping}}
+        \end{itemize}}
         \centering
         \includegraphics[width=0.5\textwidth]{img/gradient-scafi.png}
       \end{exampleblock}
@@ -460,8 +481,22 @@ and means:
   \end{columns}
 \end{frame}
 
-\begin{frame}{Future Works}
-
+\begin{frame}{Conclusion and Future Works}
+\begin{itemize}
+  \item This thesis is a \emph{\underline{systematic}} approach to the engineering of CPSW
+  \item We poses the basis for a \emph{\underline{language-based}} approach to CPSW, putting together:
+  \begin{itemize}
+    \item \emph{\underline{Learning}}: Field-informed reinforcement learning, collective program sketching, distributed schedulers
+    \item \emph{\underline{Tools}}: ScaFi, ScaRLib, ScaFi-Web
+    \item \emph{\underline{Methodologies}}: FRASP, MacroSwarm, Swarm-Sensing API
+  \end{itemize}
+  \item Future works:
+  \begin{itemize}
+    \item Close the reality gap: deploy the aggregate programs on real CPSW, improve the toolchain, leverage realistic simulators (Gazebo, etc)
+    \item Improve the learning algorithms: learn to deploy, learn to adjust runtime execution, etc
+    \item AC for learning: aggregate computing as a way create resilient infrastructure for learning (e.g., federated learning)
+  \end{itemize}
+\end{itemize}
 \end{frame}
 
 \begin{frame}

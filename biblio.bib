@@ -11,6 +11,22 @@
   journal = {Artificial Intelligence}
 }
 
+@InProceedings{macroswarm,
+author="Aguzzi, Gianluca
+and Casadei, Roberto
+and Viroli, Mirko",
+editor="Jongmans, Sung-Shik
+and Lopes, Ant{\'o}nia",
+title="MacroSwarm: A Field-Based Compositional Framework for Swarm Programming",
+booktitle="Coordination Models and Languages",
+year="2023",
+publisher="Springer Nature Switzerland",
+address="Cham",
+pages="31--51",
+abstract="Swarm behaviour engineering is an area of research that seeks to investigate methods for coordinating computation and action within groups of simple agents to achieve complex global goals like collective movement, clustering, and distributed sensing. Despite recent progress in the study and engineering of swarms (of drones, robots, vehicles), there is still need for general design and implementation methods that can be used to define complex swarm coordination in a principled way. To face this need, this paper proposes a new field-based coordination approach, called MacroSwarm, to design fully composable and reusable blocks of swarm behaviour. Based on the macroprogramming approach of aggregate computing, it roots on the idea of modelling each block of swarm behaviour by a purely functional transformation of sensing fields into actuation description fields, typically including movement vectors. We showcase the potential of MacroSwarm as a framework for collective intelligence by simulation, in a variety of scenarios including flocking, morphogenesis, and collective decision-making.",
+isbn="978-3-031-35361-1"
+}
+
 @article{degrave2022magnetic,
   title={Magnetic control of tokamak plasmas through deep reinforcement learning},
   author={Degrave, Jonas and Felici, Federico and Buchli, Jonas and Neunert, Michael and Tracey, Brendan and Carpanese, Francesco and Ewalds, Timo and Hafner, Roland and Abdolmaleki, Abbas and de Las Casas, Diego and others},
@@ -20,22 +36,6 @@
   pages={414--419},
   year={2022},
   publisher={Nature Publishing Group}
-}
-
-@InProceedings{macroswarm,
-author="Aguzzi, Gianluca
-and Casadei, Roberto
-and Viroli, Mirko",
-editor="Jongmans, Sung-Shik
-and Lopes, Ant{\'o}nia",
-title="MacroSwarm: A Field-Based Compositional Framework for Swarm Programming",
-booktitle="Coordination Models and Languages",
-year="2023",
-publisher="Springer Nature Switzerland",
-address="Cham",
-pages="31--51",
-abstract="Swarm behaviour engineering is an area of research that seeks to investigate methods for coordinating computation and action within groups of simple agents to achieve complex global goals like collective movement, clustering, and distributed sensing. Despite recent progress in the study and engineering of swarms (of drones, robots, vehicles), there is still need for general design and implementation methods that can be used to define complex swarm coordination in a principled way. To face this need, this paper proposes a new field-based coordination approach, called MacroSwarm, to design fully composable and reusable blocks of swarm behaviour. Based on the macroprogramming approach of aggregate computing, it roots on the idea of modelling each block of swarm behaviour by a purely functional transformation of sensing fields into actuation description fields, typically including movement vectors. We showcase the potential of MacroSwarm as a framework for collective intelligence by simulation, in a variety of scenarios including flocking, morphogenesis, and collective decision-making.",
-isbn="978-3-031-35361-1"
 }
 
 
@@ -188,6 +188,25 @@ keywords = {collective intelligence, macro programming, system-level programming
   biburl       = {https://dblp.org/rec/journals/lmcs/AudritoCDV23.bib},
   bibsource    = {dblp computer science bibliography, https://dblp.org}
 }
+@article{swarm-clustering,
+  doi = {10.1007/s11721-022-00215-y},
+  url = {https://doi.org/10.1007/s11721-022-00215-y},
+  year = {2022},
+  month = sep,
+  publisher = {Springer Science and Business Media {LLC}},
+  author = {Gianluca Aguzzi and Giorgio Audrito and Roberto Casadei and Ferruccio Damiani and Gianluca Torta and Mirko Viroli},
+  title = {A field-based computing approach to sensing-driven clustering in robot swarms},
+  journal = {Swarm Intelligence},
+  abstract = {Swarm intelligence leverages collective behaviours emerging from interaction and activity of several “simple” agents to solve problems in various environments. One problem of interest in large swarms featuring a variety of sub-goals is swarm clustering, where the individuals of a swarm are assigned or choose to belong to zero or more groups, also called clusters. In this work, we address the sensing-based swarm clustering problem, where clusters are defined based on both the values sensed from the environment and the spatial distribution of the values and the agents. Moreover, we address it in a setting characterised by decentralisation of computation and interaction, and dynamicity of values and mobility of agents. For the solution, we propose to use the field-based computing paradigm, where computation and interaction are expressed in terms of a functional manipulation of fields, distributed and evolving data structures mapping each individual of the system to values over time. We devise a solution to sensing-based swarm clustering leveraging multiple concurrent field computations with limited domain and evaluate the approach experimentally by means of simulations, showing that the programmed swarms form clusters that well reflect the underlying environmental phenomena dynami}
+}
+
+@inproceedings{frasp,
+  author          = {Roberto Casadei and Francesco Dente and Gianluca Aguzzi and Danilo Pianini and Mirko Viroli},
+  booktitle       = {4th IEEE International Conference on Autonomic Computing and Self-Organizing Systems - ACSOS 2023, Toronto},
+  abstract        = {Engineering self-organising systems -- e.g., robot swarms, collectives of wearables, or distributed infrastructures -- is a notable research challenge, investigated and addressed through various kinds of approaches, e.g., automatic (such as learning-based) or manual ones. In this work, we focus on the latter, and specifically on programming language-based approaches. Our goal is to devise a declarative language for expressing self-organising behaviour able to abstract from low-level concerns (like scheduling and deployment), which can usually be optimised at the platform/middleware level. Currently, most of the state-of-the-art languages for self-organisation leverage a time-driven or proactive execution model, where devices repeatedly execute sense-compute-act rounds, which is simple to reason about but limited in terms of flexibility in scheduling and management of reactive behaviours. Motivated by this, and inspired by the functional reactive paradigm, in this work we propose a reactive self-organisation programming language that enables to decouple the program logic from its scheduling. Specifically, we implement the idea through a functional reactive implementation of aggregate programming in Scala, based on the functional reactive library Sodium. The result is a functional reactive self-organisation programming model, which maintains the same expressiveness and benefits of aggregate programming while enabling significant improvements in terms of scheduling controllability, flexibility in the sensing/actuation model, and execution efficiency.},
+  title           = {Self-Organisation Programming: A Functional Reactive Macro Approach},
+  year            = {2023}
+}
 
 @inproceedings{DBLP:conf/acsos/AguzziCV22,
   author       = {Gianluca Aguzzi and
@@ -251,4 +270,59 @@ tracking and covering tasks for swarm robotics are successfully
 solved.},
   title           = {Field-informed Reinforcement Learning of Collective Tasks with Graph Neural Networks},
   year            = {2023}
+}
+@inproceedings{casadei2022towards,
+  title={Towards Automated Engineering for Collective Adaptive Systems: Vision and Research Directions},
+  author={Casadei, Roberto and Pianini, Danilo and Aguzzi, Gianluca and Audrito, Giorgio and Torta, Gianluca and Ottina, Marco and Damiani, Ferruccio and Viroli, Mirko},
+  booktitle={2022 IEEE Intl Conf on Dependable, Autonomic and Secure Computing, Intl Conf on Pervasive Intelligence and Computing, Intl Conf on Cloud and Big Data Computing, Intl Conf on Cyber Science and Technology Congress (DASC/PiCom/CBDCom/CyberSciTech)},
+  pages={1--6},
+  year={2022},
+  annote={mine},
+  
+  organization={IEEE}
+}
+
+@article{aguzzi2022dynamic,
+  title={Dynamic decentralization domains for the internet of things},
+  author={Aguzzi, Gianluca and Casadei, Roberto and Pianini, Danilo and Viroli, Mirko},
+  journal={IEEE Internet Computing},
+  volume={26},
+  number={6},
+  pages={16--23},
+  year={2022},
+  
+  annote={mine},
+  publisher={IEEE}
+}
+@inproceedings{aguzzi2021towards,
+  title={Towards Pulverised Architectures for Collective Adaptive Systems through Multi-Tier Programming},
+  author={Aguzzi, Gianluca and Casadei, Roberto and Pianini, Danilo and Salvaneschi, Guido and Viroli, Mirko},
+  booktitle={2021 IEEE International Conference on Autonomic Computing and Self-Organizing Systems Companion (ACSOS-C)},
+  pages={99--104},
+  year={2021},
+  annote={mine},
+  
+  organization={IEEE}
+}
+
+@inproceedings{aguzzi2021scafi,
+  title={ScaFi-Web: a web-based application for field-based coordination programming},
+  author={Aguzzi, Gianluca and Casadei, Roberto and Maltoni, Niccol{\`o} and Pianini, Danilo and Viroli, Mirko},
+  booktitle={Coordination Models and Languages: 23rd IFIP WG 6.1 International Conference, COORDINATION 2021, Held as Part of the 16th International Federated Conference on Distributed Computing Techniques, DisCoTec 2021, Valletta, Malta, June 14--18, 2021, Proceedings 23},
+  pages={285--299},
+  year={2021},
+  annote={mine},
+  
+  organization={Springer International Publishing}
+}
+
+@inproceedings{domini2023scarlib,
+  title={ScaRLib: A Framework for Cooperative Many Agent Deep Reinforcement Learning in Scala},
+  author={Domini, Davide and Cavallari, Filippo and Aguzzi, Gianluca and Viroli, Mirko},
+  booktitle={International Conference on Coordination Languages and Models},
+  pages={52--70},
+  year={2023},
+  
+  annote={mine},
+  organization={Springer Nature Switzerland Cham}
 }
